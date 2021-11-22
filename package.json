@@ -29,6 +29,7 @@
   "type": "module",
   "dependencies": {
     "autosize": "^5.0.1",
+    "dotenv": "^10.0.0",
     "firebase": "^9.5.0",
     "highlightjs": "^9.16.2",
     "prismjs": "^1.25.0",

@@ -1,15 +1,16 @@
 import { initializeApp } from 'firebase/app';
 import { doc, setDoc, getDoc, getFirestore, DocumentSnapshot } from 'firebase/firestore';
 import { v4 as uuidv4 } from 'uuid';
+import dotenv from 'dotenv';
+dotenv.config();
 
 const firebaseConfig: object = {
-	apiKey: 'AIzaSyAzIB_8N788qjNbb95uNPWqcKzY6kqZggs',
-	authDomain: 'ctrlv-bebf2.firebaseapp.com',
-	projectId: 'ctrlv-bebf2',
-	storageBucket: 'ctrlv-bebf2.appspot.com',
-	messagingSenderId: '394344671504',
-	appId: '1:394344671504:web:e50b037ea3224a7a931d95',
-	measurementId: 'G-89F2VVXX5L'
+	apiKey: process.env.FIREBASE_API_KEY,
+	authDomain: 'ctrlv-43cac.firebaseapp.com',
+	projectId: 'ctrlv-43cac',
+	storageBucket: 'ctrlv-43cac.appspot.com',
+	messagingSenderId: '1088726446634',
+	appId: '1:1088726446634:web:a34226b846c8b6ba970953'
 };
 
 const app = initializeApp(firebaseConfig);
