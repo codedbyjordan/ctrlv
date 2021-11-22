@@ -15,6 +15,10 @@
 	});
 </script>
 
+<svelte:head>
+	<title>New Paste - ctrl+v</title>
+</svelte:head>
+
 <textarea
 	bind:value={editorCode}
 	bind:this={editor}
