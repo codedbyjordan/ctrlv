@@ -5,7 +5,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const firebaseConfig: object = {
-	apiKey: process.env.FIREBASE_API_KEY,
+	apiKey: 'AIzaSyBjhbmmVxZBz52OzO_k2nS_cRX2vdTg94M',
 	authDomain: 'ctrlv-43cac.firebaseapp.com',
 	projectId: 'ctrlv-43cac',
 	storageBucket: 'ctrlv-43cac.appspot.com',
