@@ -1,10 +1,14 @@
 <script context="module" lang="ts">
-	export const load = async ({ page }) => {
+	export const load = async ({ page, fetch }) => {
 		const pasteId = page.params.id;
+		const res = await fetch(`/api/${pasteId}`);
+
+		const pasteData = await res.json();
 
 		return {
 			props: {
-				pasteId
+				pasteId,
+				pasteData
 			}
 		};
 	};
@@ -12,10 +16,10 @@
 
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import hljs from 'highlightjs';
+	import hljs from 'highlight.js';
 
 	export let pasteId;
-	let pasteData;
+	export let pasteData;
 
 	onMount(() => {
 		hljs.highlightAll();

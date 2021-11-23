@@ -16,9 +16,12 @@
     "@typescript-eslint/eslint-plugin": "^4.31.1",
     "@typescript-eslint/parser": "^4.31.1",
     "autoprefixer": "^10.4.0",
+    "autosize": "^5.0.1",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-svelte3": "^3.2.1",
+    "highlight.js": "^11.3.1",
+    "mongoose": "^6.0.13",
     "prettier": "^2.4.1",
     "prettier-plugin-svelte": "^2.4.0",
     "svelte-check": "^2.2.6",
@@ -29,12 +32,7 @@
   },
   "type": "module",
   "dependencies": {
-    "autosize": "^5.0.1",
     "dotenv": "^10.0.0",
-    "firebase": "^9.5.0",
-    "highlightjs": "^9.16.2",
-    "mongoose": "^6.0.13",
-    "prismjs": "^1.25.0",
     "svelte": "^3.44.2",
     "uuid": "^8.3.2"
   }

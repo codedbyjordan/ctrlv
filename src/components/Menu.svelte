@@ -1,11 +1,10 @@
 <script lang="ts">
 	import { codeStore } from '../stores/codeStore';
-	import { getAuth, signInAnonymously } from 'firebase/auth';
 
 	let disableEditor = true;
 
 	const savePaste = async () => {
-		await fetch('/save', {
+		const res = await fetch('/api/save', {
 			method: 'POST',
 			headers: {
 				Accept: 'application/json',
@@ -13,7 +12,12 @@
 			},
 			body: JSON.stringify({ code: pasteCode })
 		});
-		// window.location.href = `/${id}`;
+
+		const json = await res.json();
+
+		const id = json.id;
+
+		window.location.href = `/${id}`;
 	};
 
 	let pasteCode: string = '';
