@@ -21,7 +21,7 @@
 
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import hljs from 'highlight.js';
+	import hljs from 'highlightjs';
 
 	export let pasteId;
 	export let pasteData;
