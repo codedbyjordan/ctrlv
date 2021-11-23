@@ -1,8 +1,6 @@
 import { initializeApp } from 'firebase/app';
 import { doc, setDoc, getDoc, getFirestore, DocumentSnapshot } from 'firebase/firestore';
 import { v4 as uuidv4 } from 'uuid';
-import dotenv from 'dotenv';
-dotenv.config();
 
 const firebaseConfig: object = {
 	apiKey: 'AIzaSyBjhbmmVxZBz52OzO_k2nS_cRX2vdTg94M',
