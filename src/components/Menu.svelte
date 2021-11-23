@@ -1,12 +1,19 @@
 <script lang="ts">
-	import { dbAdd } from '../utils/firebase';
 	import { codeStore } from '../stores/codeStore';
+	import { getAuth, signInAnonymously } from 'firebase/auth';
 
 	let disableEditor = true;
 
 	const savePaste = async () => {
-		const id: string = await dbAdd(pasteCode);
-		window.location.href = `/${id}`;
+		await fetch('/save', {
+			method: 'POST',
+			headers: {
+				Accept: 'application/json',
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({ code: pasteCode })
+		});
+		// window.location.href = `/${id}`;
 	};
 
 	let pasteCode: string = '';

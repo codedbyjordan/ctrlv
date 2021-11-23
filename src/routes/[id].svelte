@@ -1,19 +1,10 @@
 <script context="module" lang="ts">
-	import { getPaste } from '../utils/firebase';
-
 	export const load = async ({ page }) => {
 		const pasteId = page.params.id;
-		let pasteData = '';
-
-		// only run on client
-		if (typeof window !== 'undefined') {
-			pasteData = await getPaste(pasteId);
-		}
 
 		return {
 			props: {
-				pasteId,
-				pasteData
+				pasteId
 			}
 		};
 	};
@@ -24,7 +15,7 @@
 	import hljs from 'highlightjs';
 
 	export let pasteId;
-	export let pasteData;
+	let pasteData;
 
 	onMount(() => {
 		hljs.highlightAll();
