@@ -1,10 +1,9 @@
-import { Paste } from '../../models/Paste';
-import { database } from '../../utils/db';
+import { Paste } from '$lib/models/Paste';
+import { connectToDb } from '$utils/db';
 
 export const post = async ({ body }) => {
-	await database.connect();
+	await connectToDb();
 	const newPaste = await Paste.create({ code: body.code, language: 'auto' });
-	await database.disconnect();
 
 	return {
 		body: {

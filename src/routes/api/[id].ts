@@ -1,10 +1,9 @@
-import { Paste } from '../../models/Paste';
-import { database } from '../../utils/db';
+import { Paste } from '../../lib/models/Paste';
+import { connectToDb } from '$utils/db';
 
 export const get = async ({ params }) => {
-	await database.connect();
+	await connectToDb();
 	const paste = await Paste.findById(params.id);
-	await database.disconnect();
 
 	return {
 		body: {

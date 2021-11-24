@@ -1,7 +1,7 @@
 <script>
-	import Menu from '../components/Menu.svelte';
+	import Menu from '$lib/Menu.svelte';
 	import '../global.css';
-	import { codeStore } from '../stores/codeStore';
+	import { codeStore } from '$stores/codeStore';
 
 	let lines = 0;
 

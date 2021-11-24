@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { codeStore } from '../stores/codeStore';
+	import { codeStore } from '$stores/codeStore';
 	import autosize from 'autosize';
 	import { onMount } from 'svelte';
 
