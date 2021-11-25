@@ -10,8 +10,7 @@
 	});
 </script>
 
-<svelt:head />
-<div class="bg-[#141414] w-full min-h-screen flex pt-4 text-white">
+<div class="bg-[#141414] w-full min-h-screen flex pt-4 text-white font-dm-mono">
 	<Menu />
 
 	<div class="pt-2 pl-4 flex w-10/12">

@@ -3,7 +3,11 @@ module.exports = {
 	purge: ['./src/**/*.svelte'],
 	darkMode: false, // or 'media' or 'class'
 	theme: {
-		extend: {}
+		extend: {
+			fontFamily: {
+				'dm-mono': ['DM Mono', 'monospace']
+			}
+		}
 	},
 	variants: {
 		extend: {}
