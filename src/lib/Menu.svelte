@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
 	import { codeStore } from '$stores/codeStore';
 
 	let disableEditor = true;
@@ -17,7 +18,7 @@
 
 		const id = json.id;
 
-		window.location.href = `/${id}`;
+		await goto(`/${id}`);
 	};
 
 	let pasteCode: string = '';
