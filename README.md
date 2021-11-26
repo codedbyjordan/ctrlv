@@ -1,4 +1,4 @@
-# Ctrl+V | ***easily share code snippets***
+![ctrl+v GitHub README Logo](./static/gh-logo.png)
 
 ## What?
 Ctrl+V is a site that allows you to quickly paste in your code and save it to share with anyone
