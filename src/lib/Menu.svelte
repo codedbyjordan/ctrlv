@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
 	import { codeStore } from '$stores/codeStore';
+	import { aos } from '@codedbyjordan/aos';
+	import { onMount } from 'svelte';
 
 	let disableEditor = true;
 
@@ -28,15 +30,22 @@
 	codeStore.subscribe((code) => {
 		pasteCode = code;
 	});
+
+	onMount(() => {
+		aos.init();
+	});
 </script>
 
-<div class="fixed right-6 top-6 p-4 bg-white bg-opacity-10 w-72">
+<div
+	class="fixed right-6 top-6 p-4 bg-white bg-opacity-10 w-72 rounded-md flex items-center justify-between"
+	data-aos-animate="fadeInRight"
+>
 	<div class="flex justify-center">
 		<img src="/logo.svg" alt="ctrl+v logo" width="110" />
 	</div>
 	<!-- Toolbar -->
-	<div class=" flex items-center justify-center mt-2">
+	<div class="flex items-center justify-center">
 		<button on:click={savePaste} disabled={disableEditor} class="bx bxs-save bx-md mx-1" />
-		<a href="/"><i class="bx bx-code-alt bx-md mx-1" /></a>
+		<a href="/"><i class="bx bxs-file-plus bx-md mx-1" /></a>
 	</div>
 </div>
