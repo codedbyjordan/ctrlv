@@ -34,5 +34,6 @@
 </svelte:head>
 
 {#if pasteData}
-	<pre class="w-full"><code class="bg-transparent">{pasteData.code}</code></pre>
+	<pre
+		class="w-full"><code class="bg-transparent {`language-${pasteData.language}`}">{pasteData.code}</code></pre>
 {/if}
