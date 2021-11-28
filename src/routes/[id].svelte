@@ -1,12 +1,9 @@
 <script context="module" lang="ts">
-	import { codeStore } from '$stores/codeStore';
-
 	export const load = async ({ page, fetch }) => {
 		const pasteId = page.params.id;
 		const res = await fetch(`/api/${pasteId}`);
 
 		const pasteData = await res.json();
-		codeStore.set(pasteData.code);
 		return {
 			props: {
 				pasteId,

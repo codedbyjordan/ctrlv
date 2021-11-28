@@ -8,10 +8,8 @@
 	let disableEditor = true;
 	let selectedLang = '';
 
-	$: console.log(selectedLang);
-
 	let pasteCode: string = '';
-	$: pasteCode == '' ? (disableEditor = true) : (disableEditor = false);
+	$: pasteCode === '' ? (disableEditor = true) : (disableEditor = false);
 	codeStore.subscribe((code) => {
 		pasteCode = code;
 	});
@@ -29,7 +27,8 @@
 		const json = await res.json();
 
 		const id = json.id;
-
+		// empty codeStore so the editor is disabled on redirect
+		codeStore.set('');
 		await goto(`/${id}`);
 	};
 
@@ -47,7 +46,12 @@
 	</div>
 	<!-- Toolbar -->
 	<div class="flex items-center justify-center">
-		<button on:click={savePaste} disabled={disableEditor} class="bx bxs-save bx-md mx-1" />
+		{#if disableEditor}
+			<button disabled class="bx bxs-save bx-md mx-1 text-gray-600 hover:cursor-default" />
+		{:else}
+			<button on:click={savePaste} disabled={disableEditor} class="bx bxs-save bx-md mx-1" />
+		{/if}
+
 		<a href="/"><i class="bx bxs-file-plus bx-md mx-1" /></a>
 		<select bind:value={selectedLang} class="text-black">
 			{#each languages as language}
