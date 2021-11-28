@@ -35,7 +35,22 @@
 	onMount(() => {
 		aos.init();
 	});
+
+	// keyboard shortcuts
+	const handleKeypress = async (event) => {
+		// event.metaKey for cmd key on Macs
+		const ctrlKeyDown: boolean = event.ctrlKey || event.metaKey;
+
+		if (ctrlKeyDown) {
+			event.preventDefault();
+			if (event.key === 's' && !disableEditor) {
+				await savePaste();
+			}
+		}
+	};
 </script>
+
+<svelte:window on:keydown={handleKeypress} />
 
 <div
 	class="fixed right-6 top-6 p-4 bg-white bg-opacity-10 w-96 rounded-md flex items-center justify-between"
