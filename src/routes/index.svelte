@@ -1,26 +1,9 @@
-<script lang="ts">
-	import { codeStore } from '$stores/codeStore';
-	import autosize from 'autosize';
-	import { onMount } from 'svelte';
-
-	let editor: HTMLTextAreaElement;
-	let editorCode: string = '';
-
-	$: {
-		codeStore.set(editorCode);
-	}
-	onMount(() => {
-		autosize(editor);
-		editor.focus();
-	});
+<script>
+	import Editor from '$lib/Editor.svelte';
 </script>
 
 <svelte:head>
 	<title>New Paste - ctrl+v</title>
 </svelte:head>
 
-<textarea
-	bind:value={editorCode}
-	bind:this={editor}
-	class="bg-transparent outline-none resize-none w-full"
-/>
+<Editor />
