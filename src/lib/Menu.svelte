@@ -42,8 +42,8 @@
 		const ctrlKeyDown: boolean = event.ctrlKey || event.metaKey;
 
 		if (ctrlKeyDown) {
-			event.preventDefault();
 			if (event.key === 's' && !disableEditor) {
+				event.preventDefault();
 				await savePaste();
 			}
 		}
