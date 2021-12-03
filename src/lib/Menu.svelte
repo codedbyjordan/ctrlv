@@ -36,6 +36,10 @@
 		aos.init();
 	});
 
+	const copyToClipboard = async () => {
+		await navigator.clipboard.writeText(pasteCode);
+	};
+
 	// keyboard shortcuts
 	const handleKeypress = async (event) => {
 		// event.metaKey for cmd key on Macs
@@ -66,6 +70,8 @@
 		{:else}
 			<button on:click={savePaste} disabled={disableEditor} class="bx bxs-save bx-md mx-1" />
 		{/if}
+
+		<button on:click={copyToClipboard} class="bx bx-clipboard bx-md mx-1" />
 
 		<a href="/"><i class="bx bxs-file-plus bx-md mx-1" /></a>
 		<select bind:value={selectedLang} class="text-black">
