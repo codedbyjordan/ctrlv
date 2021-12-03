@@ -16,9 +16,12 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import hljs from 'highlight.js';
+	import { codeStore } from '$stores/codeStore';
 
 	export let pasteId;
 	export let pasteData;
+
+	codeStore.set(pasteData.code);
 
 	onMount(() => {
 		hljs.highlightAll();
